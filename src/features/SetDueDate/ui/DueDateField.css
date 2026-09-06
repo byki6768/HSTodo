@@ -20,23 +20,60 @@
   color-scheme: inherit;
 }
 
-.dueDateField__input[type='date'] {
-  min-width: 0;
-  max-width: 100%;
-}
-
-.dueDateField__input::-webkit-datetime-edit,
-.dueDateField__input::-webkit-date-and-time-value {
-  min-width: 0;
-}
-
 .dueDateField--compact {
-  width: auto;
-  max-width: 11rem;
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 4.75rem;
+  min-width: 4.75rem;
+  max-width: 4.75rem;
+  height: 28px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-input-bg);
 }
 
-.dueDateField--compact .dueDateField__input {
-  min-height: 36px;
-  padding: 0 8px;
-  font-size: 12px;
+.dueDateField--compact:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.dueDateField__display {
+  color: var(--color-ink);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.dueDateField__display--empty {
+  color: var(--color-muted);
+}
+
+.dueDateField__input--overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  opacity: 0.02;
+  box-shadow: none;
+  cursor: pointer;
+  appearance: none;
+  font-size: 16px;
+}
+
+.dueDateField__input--overlay:focus {
+  border: 0;
+  box-shadow: none;
 }

@@ -1,8 +1,8 @@
 .todoList__summary {
-  margin: 0 0 8px;
-  padding: 0 10px;
+  margin: 0 0 6px;
+  padding: 0 8px;
   color: var(--color-muted);
-  font-size: 13px;
+  font-size: 12px;
   word-break: keep-all;
 }
 
