@@ -1,6 +1,6 @@
 .todoItem {
   display: grid;
-  grid-template-columns: auto auto auto minmax(0, 1fr) auto auto;
+  grid-template-columns: auto auto minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 8px;
   padding: 10px 8px 10px 6px;
@@ -13,12 +13,21 @@
   background: var(--color-hover-row);
 }
 
+.todoItem__main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
 .todoItem__title {
   margin: 0;
   min-width: 0;
+  flex: 1 1 auto;
   font-size: 15px;
   line-height: 1.5;
-  word-break: break-word;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
 }
 
 .todoItem--completed .todoItem__title {
@@ -49,4 +58,40 @@
 
 .todoItem--dropAfter {
   box-shadow: inset 0 -3px 0 var(--color-accent);
+}
+
+@media (max-width: 640px) {
+  .todoItem {
+    grid-template-columns: auto auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'handle leading main trailing'
+      'handle leading date date';
+    row-gap: 6px;
+  }
+
+  .todoItem > .dragHandle {
+    grid-area: handle;
+    align-self: start;
+  }
+
+  .todoItem > .toggleTodo {
+    grid-area: leading;
+    align-self: start;
+    margin-top: 5px;
+  }
+
+  .todoItem__main {
+    grid-area: main;
+  }
+
+  .todoItem > .dueDateField {
+    grid-area: date;
+    width: 100%;
+    max-width: 12.5rem;
+  }
+
+  .todoItem > .deleteTodoButton {
+    grid-area: trailing;
+    align-self: start;
+  }
 }

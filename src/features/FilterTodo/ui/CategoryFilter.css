@@ -8,6 +8,8 @@
 
 .categoryFilter__tab {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: 6px;
@@ -26,6 +28,7 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   white-space: nowrap;
+  writing-mode: horizontal-tb;
 }
 
 .categoryFilter__tab--selected {

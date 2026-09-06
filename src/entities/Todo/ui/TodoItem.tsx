@@ -57,8 +57,10 @@ export function TodoItem({
     >
       {handle}
       {leading}
-      <CategoryBadge category={todo.category} />
-      <p className="todoItem__title">{todo.title}</p>
+      <div className="todoItem__main">
+        <CategoryBadge category={todo.category} />
+        <p className="todoItem__title">{todo.title}</p>
+      </div>
       {dueDate}
       {trailing}
     </li>

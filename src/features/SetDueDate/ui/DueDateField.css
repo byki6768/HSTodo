@@ -1,6 +1,7 @@
 .dueDateField {
   display: flex;
   min-width: 0;
+  max-width: 100%;
 }
 
 .dueDateField__label {
@@ -14,7 +15,24 @@
 
 .dueDateField__input {
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
   color-scheme: inherit;
+}
+
+.dueDateField__input[type='date'] {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.dueDateField__input::-webkit-datetime-edit,
+.dueDateField__input::-webkit-date-and-time-value {
+  min-width: 0;
+}
+
+.dueDateField--compact {
+  width: auto;
+  max-width: 11rem;
 }
 
 .dueDateField--compact .dueDateField__input {
