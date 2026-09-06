@@ -1,0 +1,18 @@
+# HS Todo 프로젝트 규칙
+
+## 기술 스택
+- React + TypeScript
+- Vite 빌드 도구
+- L0calStroage로 데이터 저장(서버없음) 
+
+## 코딩 규칙
+- 하국어로 주석을 작성할 것
+- 컴포넌트는 함수형 컴포넌트로 작성할 것
+- 파일명은 PascalCase(예: TodoItem.tsx)
+- CSS는 컴포넌트별로 분리할 것(예: TodoItem.css)
+- FSD(Feature-Sliced Design) 구조로 코드 작성할 것
+
+## UI/UX 규칙
+- 모든 텍스트는 한국어로 표시
+- 깔끔하고 미니멀한 디자인
+- 모바일 반응형 디자인 적용

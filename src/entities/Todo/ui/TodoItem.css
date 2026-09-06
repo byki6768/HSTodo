@@ -1,0 +1,27 @@
+.todoItem {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px 10px 10px;
+  border-radius: var(--radius-lg);
+  transition: background-color 0.15s ease;
+}
+
+.todoItem:hover {
+  background: #f8f4ee;
+}
+
+.todoItem__title {
+  margin: 0;
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.todoItem--completed .todoItem__title {
+  color: var(--color-muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}

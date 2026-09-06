@@ -1,0 +1,24 @@
+.addTodoForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.addTodoForm__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .addTodoForm {
+    grid-template-columns: 1fr;
+  }
+
+  .addTodoForm .uiButton {
+    width: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+.toggleTodo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1.5px solid #d6cdc2;
+  border-radius: 999px;
+  background: #fff;
+  color: transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.toggleTodo svg {
+  width: 14px;
+  height: 14px;
+}
+
+.toggleTodo:hover {
+  border-color: var(--color-accent);
+}
+
+.toggleTodo--checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}

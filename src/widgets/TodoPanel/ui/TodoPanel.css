@@ -1,0 +1,17 @@
+.todoPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 480px) {
+  .todoPanel {
+    padding: 16px;
+    border-radius: 20px;
+  }
+}

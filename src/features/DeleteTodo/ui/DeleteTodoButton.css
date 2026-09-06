@@ -1,0 +1,11 @@
+.deleteTodoButton {
+  min-height: 36px;
+  padding: 0 10px;
+  font-size: 13px;
+  opacity: 0.72;
+}
+
+.deleteTodoButton:hover,
+.deleteTodoButton:focus-visible {
+  opacity: 1;
+}
