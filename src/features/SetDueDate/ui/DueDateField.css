@@ -1,0 +1,24 @@
+.dueDateField {
+  display: flex;
+  min-width: 0;
+}
+
+.dueDateField__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.dueDateField__input {
+  min-width: 0;
+  color-scheme: inherit;
+}
+
+.dueDateField--compact .dueDateField__input {
+  min-height: 36px;
+  padding: 0 8px;
+  font-size: 12px;
+}

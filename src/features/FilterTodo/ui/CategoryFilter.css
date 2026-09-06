@@ -1,0 +1,67 @@
+.categoryFilter {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.categoryFilter::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryFilter__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.categoryFilter__tab--selected {
+  border-color: transparent;
+  color: var(--color-on-category);
+}
+
+.categoryFilter__tab--all.categoryFilter__tab--selected {
+  background: var(--color-accent);
+}
+
+.categoryFilter__tab--work.categoryFilter__tab--selected {
+  background: var(--color-category-work);
+}
+
+.categoryFilter__tab--study.categoryFilter__tab--selected {
+  background: var(--color-category-study);
+}
+
+.categoryFilter__tab--personal.categoryFilter__tab--selected {
+  background: var(--color-category-personal);
+}
+
+.categoryFilter__tab--family.categoryFilter__tab--selected {
+  background: var(--color-category-family);
+}
+
+.categoryFilter__tab--etc.categoryFilter__tab--selected {
+  background: var(--color-category-etc);
+}
+
+.categoryFilter__count {
+  min-width: 16px;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.categoryFilter__tab--selected .categoryFilter__count {
+  opacity: 1;
+}

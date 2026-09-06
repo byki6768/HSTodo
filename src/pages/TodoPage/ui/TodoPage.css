@@ -4,12 +4,23 @@
   padding: 56px 0 40px;
 }
 
-.todoPage__header {
-  margin-bottom: 24px;
+.todoPage__statsRow {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.todoPage__headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
 }
 
 .todoPage__eyebrow {
-  margin: 0 0 8px;
+  margin: 0;
   color: var(--color-accent);
   font-size: 12px;
   font-weight: 700;
@@ -36,9 +47,17 @@
   text-align: center;
 }
 
+.todoPage--calendar {
+  width: min(980px, calc(100% - 24px));
+}
+
 @media (max-width: 480px) {
   .todoPage {
     width: min(520px, calc(100% - 24px));
     padding: 32px 0 28px;
+  }
+
+  .todoPage--calendar {
+    width: min(980px, calc(100% - 16px));
   }
 }

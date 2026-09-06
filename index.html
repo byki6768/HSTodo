@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0f766e" />
+    <meta name="theme-color" content="#e3f2fd" />
     <meta name="description" content="할 일을 추가하고 정리하는 앱" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="HS Todo" />
@@ -15,6 +15,18 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
     />
+    <script>
+      try {
+        var saved = JSON.parse(localStorage.getItem('hstodo.theme') || '"light"')
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.dataset.theme = saved
+          var themeMeta = document.querySelector('meta[name="theme-color"]')
+          if (themeMeta) {
+            themeMeta.setAttribute('content', saved === 'dark' ? '#0b1220' : '#e3f2fd')
+          }
+        }
+      } catch (_) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

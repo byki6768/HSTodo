@@ -1,15 +1,16 @@
 .todoItem {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto auto auto minmax(0, 1fr) auto auto;
   align-items: center;
-  gap: 12px;
-  padding: 10px 8px 10px 10px;
+  gap: 8px;
+  padding: 10px 8px 10px 6px;
   border-radius: var(--radius-lg);
   transition: background-color 0.15s ease;
+  cursor: grab;
 }
 
 .todoItem:hover {
-  background: #f8f4ee;
+  background: var(--color-hover-row);
 }
 
 .todoItem__title {
@@ -22,6 +23,30 @@
 
 .todoItem--completed .todoItem__title {
   color: var(--color-muted);
-  text-decoration: line-through;
-  text-decoration-thickness: 1px;
+  text-decoration: line-through solid #9ca3af 2px;
+  text-decoration-thickness: 2px;
+}
+
+.todoItem--overdue .todoItem__title {
+  animation: overdueTextBlink 1s steps(1, end) infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .todoItem--overdue .todoItem__title {
+    animation: none;
+    color: #dc2626;
+  }
+}
+
+.todoItem--dragging {
+  opacity: 0.45;
+  cursor: grabbing;
+}
+
+.todoItem--dropBefore {
+  box-shadow: inset 0 3px 0 var(--color-accent);
+}
+
+.todoItem--dropAfter {
+  box-shadow: inset 0 -3px 0 var(--color-accent);
 }

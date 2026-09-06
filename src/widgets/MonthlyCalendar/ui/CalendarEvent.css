@@ -1,0 +1,76 @@
+.calendarEvent {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 1px 6px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--color-on-category);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.calendarEvent--work {
+  background: var(--color-category-work);
+}
+
+.calendarEvent--study {
+  background: var(--color-category-study);
+}
+
+.calendarEvent--personal {
+  background: var(--color-category-personal);
+}
+
+.calendarEvent--family {
+  background: var(--color-category-family);
+}
+
+.calendarEvent--etc {
+  background: var(--color-category-etc);
+}
+
+.calendarEvent--completed {
+  text-decoration: line-through solid #9ca3af 2px;
+  opacity: 0.78;
+}
+
+.calendarEvent--overdue {
+  animation: overdueBlink 1s steps(1, end) infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendarEvent--overdue {
+    animation: none;
+    background-color: #dc2626;
+    color: #ffffff;
+  }
+}
+
+.calendarEvent--dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.calendarEvent--dropBefore {
+  box-shadow: inset 0 2px 0 #fff;
+}
+
+.calendarEvent--dropAfter {
+  box-shadow: inset 0 -2px 0 #fff;
+}
+
+.calendarEvent--expanded {
+  overflow: visible;
+  padding: 6px 8px;
+  border-radius: 10px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-overflow: unset;
+}

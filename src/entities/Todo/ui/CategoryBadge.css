@@ -1,0 +1,33 @@
+.categoryBadge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 3px 10px;
+  color: var(--color-on-category);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.categoryBadge--work {
+  background: var(--color-category-work);
+}
+
+.categoryBadge--study {
+  background: var(--color-category-study);
+}
+
+.categoryBadge--personal {
+  background: var(--color-category-personal);
+}
+
+.categoryBadge--family {
+  background: var(--color-category-family);
+}
+
+.categoryBadge--etc {
+  background: var(--color-category-etc);
+}

@@ -1,0 +1,19 @@
+.dragHandle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 36px;
+  color: var(--color-muted);
+  cursor: grab;
+  touch-action: none;
+}
+
+.dragHandle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}

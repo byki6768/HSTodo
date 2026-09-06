@@ -35,7 +35,7 @@
 }
 
 .uiButton--ghost:hover:not(:disabled) {
-  background: #f4eee6;
+  background: var(--color-ghost-hover);
   color: var(--color-ink);
 }
 

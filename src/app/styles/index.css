@@ -1,8 +1,9 @@
 /* 전역 토큰과 기본 리셋 */
 :root {
-  --color-bg: #f3efe8;
-  --color-bg-accent: #e7eee9;
-  --color-surface: #fffcf8;
+  color-scheme: light;
+  --color-bg: #e3f2fd;
+  --color-bg-accent: #bbdefb;
+  --color-surface: #ffffff;
   --color-ink: #1c1917;
   --color-muted: #78716c;
   --color-border: #e8e0d6;
@@ -11,11 +12,63 @@
   --color-accent-soft: #d7f3ee;
   --color-danger: #b42318;
   --color-danger-soft: #fde8e6;
+  --color-input-bg: #ffffff;
+  --color-placeholder: #a8a29e;
+  --color-hover-row: #f8f4ee;
+  --color-ghost-hover: #f4eee6;
+  --color-toggle-border: #d6cdc2;
+  --color-toggle-bg: #ffffff;
+  --color-category-work: #f28b82;
+  --color-category-study: #f6be7a;
+  --color-category-personal: #e0b83a;
+  --color-category-family: #8fd19e;
+  --color-category-etc: #8eb8e5;
+  --color-on-category: #ffffff;
+  --color-progress-track: #e8eef3;
+  --color-overdue-blink: #111111;
+  --color-calendar-box: #fde8ef;
+  --color-calendar-box-border: #f4cdd8;
+  --color-list-box: #fff6d4;
+  --color-list-box-border: #ead889;
   --radius-xl: 24px;
   --radius-lg: 16px;
   --radius-md: 12px;
   --shadow: 0 18px 40px -28px rgba(28, 25, 23, 0.45);
   --font: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #0b1220;
+  --color-bg-accent: #16233a;
+  --color-surface: #1b273c;
+  --color-ink: #f4f1ea;
+  --color-muted: #9aa3b2;
+  --color-border: #2d3b55;
+  --color-accent: #2dd4bf;
+  --color-accent-hover: #5eead4;
+  --color-accent-soft: rgba(45, 212, 191, 0.18);
+  --color-danger: #f87171;
+  --color-danger-soft: rgba(248, 113, 113, 0.16);
+  --color-input-bg: #121a2b;
+  --color-placeholder: #7d8796;
+  --color-hover-row: #24324a;
+  --color-ghost-hover: #24324a;
+  --color-toggle-border: #3a4a66;
+  --color-toggle-bg: #121a2b;
+  --color-category-work: #e57373;
+  --color-category-study: #ffb74d;
+  --color-category-personal: #d4a017;
+  --color-category-family: #81c784;
+  --color-category-etc: #64b5f6;
+  --color-on-category: #ffffff;
+  --color-progress-track: #24324a;
+  --color-overdue-blink: #ffffff;
+  --color-calendar-box: #3a2730;
+  --color-calendar-box-border: #6b4452;
+  --color-list-box: #3a3520;
+  --color-list-box-border: #6b6238;
+  --shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.7);
 }
 
 *,
@@ -35,9 +88,25 @@ body {
   font-family: var(--font);
   color: var(--color-ink);
   background:
-    radial-gradient(circle at top left, var(--color-bg-accent), transparent 42%),
-    linear-gradient(180deg, var(--color-bg) 0%, #efe8dc 100%);
+    linear-gradient(120deg, var(--color-bg), var(--color-bg-accent), var(--color-bg));
+  background-size: 400% 400%;
+  animation: skyBackgroundMotion 15s ease-in-out infinite;
   -webkit-font-smoothing: antialiased;
+  transition:
+    background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s ease;
+}
+
+@keyframes skyBackgroundMotion {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 button,
@@ -51,4 +120,24 @@ button {
 
 #root {
   min-height: 100dvh;
+}
+
+@keyframes overdueBlink {
+  from {
+    background-color: #dc2626;
+    color: #ffffff;
+  }
+  to {
+    background-color: #ffffff;
+    color: #dc2626;
+  }
+}
+
+@keyframes overdueTextBlink {
+  from {
+    color: #dc2626;
+  }
+  to {
+    color: var(--color-overdue-blink);
+  }
 }

@@ -1,0 +1,81 @@
+.calendarToggle {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 148px;
+  padding: 16px 14px;
+  border: 1px solid var(--color-calendar-box-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-calendar-box);
+  color: var(--color-accent);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.calendarToggle svg {
+  width: 32px;
+  height: 32px;
+}
+
+.calendarToggle__label {
+  color: var(--color-ink);
+  font-size: 15px;
+  font-weight: 740;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.calendarToggle__hint {
+  color: var(--color-muted);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.calendarToggle:hover {
+  transform: translateY(-1px);
+  border-color: #e8a4b8;
+}
+
+.calendarToggle--open {
+  background: var(--color-list-box);
+  border-color: var(--color-list-box-border);
+  color: var(--color-accent);
+}
+
+.calendarToggle--open:hover {
+  border-color: #d4be63;
+}
+
+.calendarToggle--open .calendarToggle__label {
+  color: var(--color-ink);
+}
+
+.calendarToggle--open .calendarToggle__hint {
+  color: var(--color-muted);
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .calendarToggle {
+    width: 112px;
+    padding: 14px 10px;
+    border-radius: 20px;
+  }
+
+  .calendarToggle svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .calendarToggle__label {
+    font-size: 13px;
+  }
+
+  .calendarToggle__hint {
+    font-size: 10px;
+  }
+}

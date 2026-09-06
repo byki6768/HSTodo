@@ -1,0 +1,60 @@
+.todoProgress {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.todoProgress__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.todoProgress__stat {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.todoProgress__stat strong {
+  color: var(--color-ink);
+  font-size: 18px;
+  font-weight: 740;
+}
+
+.todoProgress__track {
+  overflow: hidden;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--color-progress-track);
+}
+
+.todoProgress__fill {
+  width: var(--progress, 0%);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-accent);
+  transition: width 0.35s ease;
+}
+
+.todoProgress__hint {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .todoProgress {
+    padding: 14px 16px;
+    border-radius: 20px;
+  }
+}

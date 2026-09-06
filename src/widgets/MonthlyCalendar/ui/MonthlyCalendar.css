@@ -1,0 +1,116 @@
+.monthlyCalendar {
+  display: flex;
+  flex-direction: column;
+  min-height: min(68vh, 720px);
+  overflow: visible;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.monthlyCalendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.monthlyCalendar__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.monthlyCalendar__title {
+  margin: 0;
+  min-width: 8.5rem;
+  font-size: 20px;
+  font-weight: 740;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.monthlyCalendar__iconBtn,
+.monthlyCalendar__today {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.monthlyCalendar__iconBtn {
+  width: 36px;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.monthlyCalendar__today {
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.monthlyCalendar__iconBtn:hover,
+.monthlyCalendar__today:hover {
+  background: var(--color-ghost-hover);
+}
+
+.monthlyCalendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.monthlyCalendar__weekday {
+  padding: 8px 4px;
+  color: var(--color-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.monthlyCalendar__weekday--sunday {
+  color: #d93025;
+}
+
+.monthlyCalendar__grid {
+  display: grid;
+  flex: 1;
+  isolation: isolate;
+  overflow: visible;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.monthlyCalendar__grid > .calendarCell:nth-last-child(-n + 7) .calendarCell__popover {
+  top: auto;
+  bottom: 26px;
+}
+
+.monthlyCalendar__grid > :nth-child(7n) {
+  border-right: 0;
+}
+
+@media (max-width: 640px) {
+  .monthlyCalendar {
+    min-height: min(62vh, 560px);
+    border-radius: 20px;
+  }
+
+  .monthlyCalendar__header {
+    padding: 10px 12px;
+  }
+
+  .monthlyCalendar__title {
+    min-width: 7rem;
+    font-size: 16px;
+  }
+}
